@@ -1,5 +1,45 @@
 public class ConnectFour{
 
+  
+    private static Board board; //stores the Board used to play this game
+    private static Color[] colors; //stores the colors of each plyaer in order
+  
+public ConnectFour(){
+        addMouseListener(this);
+    }
+  
+   public static void main(String[] args){
+     JFrame window = new JFrame("Connect Four");
+        window.setBounds(/*INSERT YOUR PARAMETERS HERE*/);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ConnectFour cf = new ConnectFour();
+        cf.setBackground(Color.WHITE);  // background color; the default color is light gray
+        Container c = window.getContentPane(); //gets the Window
+        c.add(cf); //adds the panel to the window
+        window.setVisible(true);
+
+     //More code will go in the main method here
+
+   }
+  
+//Simulates a virtual opponent. Implemented in part 5
+  public static void virtualOpponent(){
+
+  }
+  
+  public void paintComponent(Graphics g){
+            super.paintComponent(g);
+            board.draw(g, colors);      
+    }
+  
+      public void mousePressed(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
   public static String convertColorToString(Color col){
         String color;
         if (col.equals(Color.BLACK))
